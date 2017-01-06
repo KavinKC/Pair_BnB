@@ -9,8 +9,9 @@ class ListingsController < ApplicationController
    end
 
    def create
-        @listings = current_user.listings.new(listing_params)
-     if @listings.save
+      byebug
+        @listing = current_user.listings.new(listing_params)
+     if @listing.save
         redirect_to listings_path
      end
    end
@@ -21,6 +22,7 @@ class ListingsController < ApplicationController
 
    def edit
    end
+
 
    def update
      if @listing.update(user_params)
@@ -34,7 +36,9 @@ class ListingsController < ApplicationController
 
 
    def find_listing
+     byebug
      @listing = Listing.find(params[:id])
+
    end
 
    def listing_params
