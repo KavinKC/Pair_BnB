@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   root "listings#index"
   resources :listings
+  get "/auth/:provider/callback" => "sessions#create_from_omniauth"
   # get 'welcome/index' => 'welcome#index'
   # root to: 'welcome#index'
   #
