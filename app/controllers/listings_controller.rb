@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
    end
 
    def new
-     @listings = Listing.new
+     @listing = Listing.new
    end
 
    def create
@@ -17,7 +17,7 @@ class ListingsController < ApplicationController
    end
 
    def show
-
+      @booking = @listing.bookings.new
    end
 
    def edit
@@ -36,7 +36,6 @@ class ListingsController < ApplicationController
 
 
    def find_listing
-     byebug
      @listing = Listing.find(params[:id])
 
    end
